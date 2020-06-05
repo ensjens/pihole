@@ -18,6 +18,7 @@ services:
       placement:
         constraints:
           - node.role == worker
+          - node.labels.group == pi4server
           - node.hostname == raspberrypi2
     ports:
       - target: 80
@@ -60,6 +61,9 @@ services:
       placement:
         constraints:
           - node.role == worker
+          - node.labels.group == pi4server
           - node.hostname == raspberrypi2
+    ports:
+      - "5053:5053/udp"
 #    expose:
 #      - "5353"
