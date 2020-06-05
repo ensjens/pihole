@@ -3,10 +3,6 @@ version: "3.3"
 networks:
   dns_net:
     driver: overlay
-
-volumes:
-  etc-pihole:
-  etc-dnsmasq.d:
   
 services:
   pihole:
@@ -47,8 +43,8 @@ services:
 #      DNS1: 172.18.0.2#5353
 #      DNS2: 172.18.0.4#5353
     volumes:
-      - etc-pihole:/etc/pihole
-      - etc-dnsmasq.d:/etc/dnsmasq.d
+      - /etc/pihole:/etc/pihole
+      - /etc/dnsmasq.d:/etc/dnsmasq.d
     dns:
       - 127.0.0.1
 
